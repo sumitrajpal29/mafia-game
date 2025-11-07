@@ -1,0 +1,250 @@
+.gameover-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.gameover-container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.gameover-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: bounceIn 0.6s ease-out;
+}
+
+.winner-announcement {
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+.winner-announcement.mafia {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(192, 57, 43, 0.2) 100%);
+  border: 3px solid #e74c3c;
+}
+
+.winner-announcement.villagers {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.2) 0%, rgba(39, 174, 96, 0.2) 100%);
+  border: 3px solid #2ecc71;
+}
+
+.winner-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.winner-team {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.winner-announcement.mafia .winner-team {
+  color: #e74c3c;
+}
+
+.winner-announcement.villagers .winner-team {
+  color: #2ecc71;
+}
+
+.winner-message {
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.final-roles {
+  margin-bottom: 2rem;
+}
+
+.final-roles h3 {
+  color: #ecf0f1;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.role-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+  animation: fadeIn 0.4s ease-out backwards;
+}
+
+.role-item:nth-child(1) { animation-delay: 0.1s; }
+.role-item:nth-child(2) { animation-delay: 0.2s; }
+.role-item:nth-child(3) { animation-delay: 0.3s; }
+.role-item:nth-child(4) { animation-delay: 0.4s; }
+.role-item:nth-child(5) { animation-delay: 0.5s; }
+.role-item:nth-child(6) { animation-delay: 0.6s; }
+
+.role-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.role-player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.role-icon {
+  font-size: 1.5rem;
+}
+
+.role-player-name {
+  color: #ecf0f1;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.role-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.eliminated-badge {
+  color: #e74c3c;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.gameover-actions {
+  margin-top: 2.5rem;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.5);
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .gameover-title {
+    font-size: 2rem;
+  }
+
+  .winner-team {
+    font-size: 2rem;
+  }
+
+  .winner-icon {
+    font-size: 3rem;
+  }
+
+  .role-player-name {
+    font-size: 1rem;
+  }
+
+  .role-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.eliminated-badge {
+  font-size: 20px;
+}
+.gameover-actions {
+  margin-top: 30px;
+}
+
+.gameover-actions .btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+}

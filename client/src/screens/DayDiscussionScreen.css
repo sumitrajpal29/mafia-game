@@ -1,0 +1,300 @@
+.day-discussion-screen {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.day-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.day-header {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+}
+
+.day-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.phase-description {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Night Result */
+.night-result {
+  padding: 25px;
+  text-align: center;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.alert-danger {
+  background: rgba(231, 76, 60, 0.2);
+  border: 2px solid #e74c3c;
+}
+
+.alert-success {
+  background: rgba(46, 204, 113, 0.2);
+  border: 2px solid #2ecc71;
+}
+
+.night-result h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.eliminated-message {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.safe-message {
+  font-size: 18px;
+}
+
+.role-reveal {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+/* Players Section */
+.players-section {
+  padding: 25px;
+}
+
+.players-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.player-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.player-card.you {
+  border-color: #3498db;
+  background: rgba(52, 152, 219, 0.2);
+}
+
+.player-card.dead {
+  opacity: 0.6;
+  filter: grayscale(100%);
+  position: relative;
+}
+
+.player-card.dead::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: #e74c3c;
+  transform: translateY(-50%);
+}
+
+.player-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.you-tag {
+  color: #3498db;
+  font-size: 14px;
+}
+
+.player-status {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dead-badge {
+  font-size: 12px;
+  color: #e74c3c;
+}
+
+.role-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.spectator-badge {
+  font-size: 12px;
+  color: #95a5a6;
+}
+
+/* Discussion Tips */
+.discussion-tips {
+  padding: 25px;
+}
+
+.discussion-tips h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.discussion-tips ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.discussion-tips li {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 14px;
+  position: relative;
+  padding-left: 35px;
+}
+
+.discussion-tips li:before {
+  content: "💡";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+}
+
+/* Action Section */
+.action-section {
+  padding: 30px;
+  text-align: center;
+}
+
+.action-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.btn-large {
+  padding: 18px 48px;
+  font-size: 20px;
+  min-width: 250px;
+}
+
+.spectator-message {
+  padding: 20px;
+  background: rgba(149, 165, 166, 0.2);
+  border: 2px solid #95a5a6;
+  border-radius: 12px;
+}
+
+.spectator-message p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.ready-waiting {
+  padding: 30px;
+  text-align: center;
+  background: rgba(46, 204, 113, 0.2);
+  border: 2px solid #2ecc71;
+  border-radius: 12px;
+}
+
+.ready-waiting h3 {
+  font-size: 28px;
+  color: #2ecc71;
+  margin-bottom: 12px;
+}
+
+.ready-waiting p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.waiting-spinner {
+  font-size: 48px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discussion-tips ul {
+    grid-template-columns: 1fr;
+  }
+
+  .day-header h1 {
+    font-size: 28px;
+  }
+
+  .btn-large {
+    min-width: 100%;
+  }
+}

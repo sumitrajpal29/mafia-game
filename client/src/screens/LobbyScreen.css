@@ -1,0 +1,129 @@
+.lobby-screen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.lobby-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.lobby-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.room-code-display {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.room-code-label {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.room-code {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.players-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.player-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.player-number {
+  font-weight: bold;
+  opacity: 0.6;
+  min-width: 30px;
+}
+
+.player-name {
+  flex: 1;
+  font-size: 18px;
+}
+
+.host-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.you-badge {
+  color: #4facfe;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.lobby-actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.lobby-actions .btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+}
+
+.lobby-actions .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waiting-message {
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.lobby-info {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 14px;
+}

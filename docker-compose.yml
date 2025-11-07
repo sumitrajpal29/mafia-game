@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  dev-environment:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: mafia-git
+    volumes:
+      - .:/workspace
+    ports:
+      - "3000:3000"  # Client port
+      - "3001:3001"  # Server port
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    command: bash
+    environment:
+      - NODE_ENV=development

@@ -1,0 +1,60 @@
+.home-screen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mode-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+}
+
+.home-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-actions button {
+  flex: 1;
+}

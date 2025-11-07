@@ -1,0 +1,199 @@
+.role-reveal-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.role-reveal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.role-reveal-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  animation: revealZoom 0.5s ease-out;
+}
+
+@keyframes revealZoom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.countdown-badge {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 10;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.role-reveal-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 3px solid;
+  text-align: center;
+}
+
+.role-title {
+  font-size: 56px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  animation: titleGlow 2s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.role-description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.teammates-section {
+  background: rgba(231, 76, 60, 0.2);
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.teammates-section h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #e74c3c;
+}
+
+.teammates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.teammate-name {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.abilities-section {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.abilities-section h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.abilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.abilities-list li {
+  padding: 10px 0;
+  font-size: 16px;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 25px;
+}
+
+.abilities-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.role-tip {
+  font-size: 16px;
+  padding: 16px;
+  background: rgba(241, 196, 15, 0.2);
+  border: 2px solid rgba(241, 196, 15, 0.5);
+  border-radius: 8px;
+  margin-top: 20px;
+  animation: tipBlink 2s ease-in-out infinite;
+}
+
+@keyframes tipBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .role-reveal-card {
+    padding: 30px 20px;
+  }
+
+  .role-title {
+    font-size: 40px;
+  }
+
+  .role-description {
+    font-size: 16px;
+  }
+
+  .abilities-list li {
+    font-size: 14px;
+  }
+}
