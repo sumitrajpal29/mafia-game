@@ -4,6 +4,31 @@ import './RoleRevealScreen.css';
 function RoleRevealScreen({ myRole, onComplete }) {
   const [countdown, setCountdown] = useState(7);
 
+  useEffect(() => {
+    if (myRole && myRole.role) {
+      // Countdown timer
+      const countdownInterval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(countdownInterval);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      // Auto-close after 7 seconds
+      const timer = setTimeout(() => {
+        onComplete();
+      }, 7000);
+
+      return () => {
+        clearTimeout(timer);
+        clearInterval(countdownInterval);
+      };
+    }
+  }, [onComplete, myRole]);
+
   // Safety check - should not happen with the fix, but just in case
   if (!myRole || !myRole.role) {
     console.error('RoleRevealScreen: No role data available', myRole);
@@ -23,29 +48,6 @@ function RoleRevealScreen({ myRole, onComplete }) {
       </div>
     );
   }
-
-  useEffect(() => {
-    // Countdown timer
-    const countdownInterval = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(countdownInterval);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    // Auto-close after 7 seconds
-    const timer = setTimeout(() => {
-      onComplete();
-    }, 7000);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(countdownInterval);
-    };
-  }, [onComplete]);
 
   const getRoleInfo = () => {
     switch (myRole.role) {
